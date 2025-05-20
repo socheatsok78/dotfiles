@@ -1,5 +1,5 @@
 # dotfiles
-My dotfiles for various applications and shell environments.
+The dotfiles for my local setup & GitHub Codespace ✌️
 
 ### Prerequisites
 
