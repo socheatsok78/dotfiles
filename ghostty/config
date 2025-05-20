@@ -1,8 +1,11 @@
-window-padding-x = 8
-window-padding-y = 8
-window-height = 30
-window-width = 132
-theme = iTerm2 Smoooooth
+font-family = FiraCode Nerd Font Mono
 font-size = 12
 font-thicken = true
-font-family = FiraCode Nerd Font Mono
+mouse-hide-while-typing = true
+# theme = iTerm2 Smoooooth
+theme = GitHub-Dark-Default
+window-decoration = true
+window-height = 30
+window-padding-x = 8
+window-padding-y = 8
+window-width = 132
