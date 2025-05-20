@@ -1,5 +1,14 @@
 { config, pkgs, ... }:
 {
+  # Home Manager needs a bit of information about you and the
+  # paths it should manage.
+  home.username = "socheat";
+  home.homeDirectory = "/Users/socheat";
+
+  home.packages = [
+    pkgs.htop
+  ];
+
   # This value determines the Home Manager release that your configuration is 
   # compatible with. This helps avoid breakage when a new Home Manager release 
   # introduces backwards incompatible changes. 
@@ -9,6 +18,6 @@
   # release notes. 
   home.stateVersion = "24.11"; # Please read the comment before changing.
 
-  home.username = "Socheat";
-  home.homeDirectory = "/Users/socheat";
+  # Let Home Manager install and manage itself.
+  programs.home-manager.enable = true;
 }
