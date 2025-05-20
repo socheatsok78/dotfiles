@@ -7,7 +7,6 @@
 
   home.packages = [
     pkgs.home-manager
-    pkgs.htop
   ];
 
   # This value determines the Home Manager release that your configuration is

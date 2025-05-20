@@ -28,6 +28,7 @@
           # $ nix-env -qaP | grep wget
           environment.systemPackages = [
             pkgs.vim
+            pkgs.htop
           ];
 
           # Necessary for using nix and flakes on this system.
