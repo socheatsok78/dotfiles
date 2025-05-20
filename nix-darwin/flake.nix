@@ -62,7 +62,7 @@
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
-              home-manager.users."Socheat" = ./home.nix;
+              home-manager.users."Socheat" = import ./home.nix;
             }
           ];
         };
