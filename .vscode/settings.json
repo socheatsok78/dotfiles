@@ -15,14 +15,11 @@
                     "nixfmt"
                 ],
             },
-            // "options": {
-            //     "home-manager": {
-            //         "expr": "(builtins.getFlake \"${workspaceFolder}/nix-darwin\").homeConfigurations.\"Socheats-MacBook-M2-Pro\".options",
-            //     },
-            //     "nix-darwin": {
-            //         "expr": "(builtins.getFlake \"${workspaceFolder}/nix-darwin\").darwinConfigurations.\"Socheats-MacBook-M2-Pro\".options",
-            //     },
-            // }
+            "options": {
+                "nix-darwin": {
+                    "expr": "(builtins.getFlake \"${workspaceFolder}/nix-darwin/\").darwinConfigurations.\"Socheats-MacBook-M2-Pro\".options",
+                },
+            }
         },
     },
 }
