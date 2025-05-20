@@ -58,8 +58,13 @@
         "Socheats-MacBook-M2-Pro" = nix-darwin.lib.darwinSystem {
           system = "aarch64-darwin";
           modules = [
-            { users.users.socheat.home = "/Users/socheat"; }
             configuration
+            {
+              users.users.socheat = {
+                name = "socheat";
+                home = "/Users/socheat";
+              };
+            }
             home-manager.darwinModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
