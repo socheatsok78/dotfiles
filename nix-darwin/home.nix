@@ -6,7 +6,7 @@
   home.homeDirectory = "/Users/socheat";
 
   home.packages = [
-    pkgs.home-manager
+    # No packages to install at the moment.
   ];
 
   # This value determines the Home Manager release that your configuration is
@@ -17,7 +17,4 @@
   # want to update the value, then make sure to first check the Home Manager
   # release notes.
   home.stateVersion = "24.11"; # Please read the comment before changing.
-
-  # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true;
 }
