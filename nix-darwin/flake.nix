@@ -46,8 +46,8 @@
           # $ darwin-rebuild changelog
           system.stateVersion = 5;
 
-          # The platform the configuration will be used on.
-          # nixpkgs.hostPlatform = "aarch64-darwin";
+          # Home Manager configuration.
+          home-manager.backupFileExtension = "backup";
         };
     in
     {

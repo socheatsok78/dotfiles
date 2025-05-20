@@ -6,6 +6,7 @@
   home.homeDirectory = "/Users/socheat";
 
   home.packages = [
+    pkgs.home-manager
     pkgs.htop
   ];
 
