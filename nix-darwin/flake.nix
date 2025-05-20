@@ -1,6 +1,4 @@
 {
-  description = "Socheat's darwin system flake";
-
   inputs = {
     nixpkgs = {
       url = "github:NixOS/nixpkgs/nixpkgs-24.11-darwin";
@@ -9,13 +7,17 @@
       url = "github:nix-darwin/nix-darwin/nix-darwin-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    home-manager = {
+      url = "github:nix-community/home-manager/release-24.11";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
-
   outputs =
     inputs@{
       self,
       nix-darwin,
       nixpkgs,
+      ...
     }:
     let
       configuration =
