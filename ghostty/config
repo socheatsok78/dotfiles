@@ -1,0 +1,8 @@
+window-padding-x = 8
+window-padding-y = 8
+window-height = 30
+window-width = 132
+theme = iTerm2 Smoooooth
+font-size = 12
+font-thicken = true
+font-family = FiraCode Nerd Font Mono
