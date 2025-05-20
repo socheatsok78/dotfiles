@@ -12,12 +12,13 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
+
   outputs =
     inputs@{
       self,
       nix-darwin,
       nixpkgs,
-      ...
+      home-manager,
     }:
     let
       configuration =
@@ -29,11 +30,14 @@
             pkgs.vim
           ];
 
-          # Necessary for using flakes on this system.
+          # Necessary for using nix and flakes on this system.
+          services.nix-daemon.enable = true;
+          nix.useDaemon = true;
+          nix.configureBuildUsers = true;
           nix.settings.experimental-features = "nix-command flakes";
 
-          # Enable alternative shell support in nix-darwin.
-          # programs.fish.enable = true;
+          # Configure default shell.
+          programs.zsh.enable = true; # default shell on macOS
 
           # Set Git commit hash for darwin-version.
           system.configurationRevision = self.rev or self.dirtyRev or null;
@@ -52,8 +56,19 @@
       darwinConfigurations = {
         "Socheats-MacBook-M2-Pro" = nix-darwin.lib.darwinSystem {
           system = "aarch64-darwin";
-          modules = [ configuration ];
+          modules = [
+            configuration
+            home-manager.darwinModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.users.socheat = ./home.nix;
+            }
+          ];
         };
       };
+
+      # Expose the package set, including overlays, for convenience.
+      darwinPackages = self.darwinConfigurations."Socheats-MacBook-M2-Pro".pkgs;
     };
 }
