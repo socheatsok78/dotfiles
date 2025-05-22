@@ -1,1 +1,0 @@
-test -e "$HOME/.config/zshrc/.zshrc" && builtin source "$HOME/.config/zshrc/.zshrc" || true
