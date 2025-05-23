@@ -5,7 +5,7 @@ export PATH="/usr/local/sbin:$HOME/.config/bin:$PATH"
 # Environment variables for Docker Buildx
 # https://docs.docker.com/build/building/env-vars/
 export BUILDKIT_PROGRESS=plain
-export BUILDKIT_COLORS=1
+export BUILDKIT_COLORS=NO_COLOR
 export BUILDX_EXPERIMENTAL=1
 
 # Golang
